@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "tea-taster",
+  "appId": "me.horodyski.teataster",
+  "appName": "Eric Tea Taster",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "build",
