@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Eric Tea Taster</string>
+    <string name="title_activity_main">Eric Tea Taster</string>
+    <string name="package_name">me.horodyski.teataster</string>
+    <string name="custom_url_scheme">me.horodyski.teataster</string>
+</resources>
