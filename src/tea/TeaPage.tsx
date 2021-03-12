@@ -12,8 +12,6 @@ import {
   IonHeader,
   IonIcon,
   IonImg,
-  IonItem,
-  IonList,
   IonPage,
   IonRow,
   IonTitle,
@@ -26,6 +24,7 @@ import { useTea } from './useTea';
 
 import './TeaPage.css';
 import { logOutOutline } from 'ionicons/icons';
+import { Link } from 'react-router-dom';
 
 export const listToMatrix = (teas: Tea[]): Array<Array<Tea>> => {
   let teaMatrix: Array<Array<Tea>> = [];
@@ -63,6 +62,10 @@ const TeaPage: React.FC = () => {
     history.replace('/login');
   };
 
+  const showDetailsPage = (id: number) => {
+    history.push(`/tea/details/${id}`);
+  };
+
   return (
     <IonPage>
       <IonHeader>
@@ -90,7 +93,7 @@ const TeaPage: React.FC = () => {
             >
               {row.map(tea => (
                 <IonCol size="12" sizeMd="6" sizeXl="3" key={tea.id}>
-                  <IonCard>
+                  <IonCard button onClick={() => showDetailsPage(tea.id)}>
                     <IonImg src={tea.image} />
                     <IonCardHeader>
                       <IonCardTitle>{tea.name}</IonCardTitle>
