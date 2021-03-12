@@ -12,10 +12,11 @@ import { useParams } from 'react-router';
 import React, { useEffect, useState } from 'react';
 import { useTea } from '../useTea';
 import { Tea } from '../../shared/models';
+import { Rating } from '../../shared/components';
 
 const TeaDetailsPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const { getTeaById } = useTea();
+  const { getTeaById, saveTea } = useTea();
   const [tea, setTea] = useState<Tea | undefined>(undefined);
 
   useEffect(() => {
@@ -49,6 +50,11 @@ const TeaDetailsPage: React.FC = () => {
           </div>
           <h1>{tea?.name}</h1>
           <p>{tea?.description}</p>
+          <Rating
+            initialRating={tea?.rating}
+            disabled={!tea}
+            onRatingChange={(rating: number) => saveTea({ ...tea!, rating })}
+          />
         </div>
       </IonContent>
     </IonPage>
