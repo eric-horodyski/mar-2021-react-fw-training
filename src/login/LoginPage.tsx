@@ -29,7 +29,7 @@ const LoginPage: React.FC = () => {
   const history = useHistory();
 
   useEffect(() => {
-    status === 'authenticated' && history.replace('/tea');
+    status === 'authenticated' && history.replace('/tabs/tea');
   }, [status, history]);
 
   const handleLogin = async (data: { email: string; password: string }) => {

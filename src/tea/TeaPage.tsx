@@ -63,7 +63,7 @@ const TeaPage: React.FC = () => {
   };
 
   const showDetailsPage = (id: number) => {
-    history.push(`/tea/details/${id}`);
+    history.push(`/tabs/tea/details/${id}`);
   };
 
   return (
